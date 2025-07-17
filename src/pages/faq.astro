@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.svelte';
+import Footer from '../components/Footer.svelte';
+import FaqAccordion from '../components/FaqAccordion.svelte';
+---
+
+<Layout title="KFZ-Steuer Rechner – FAQ" description="Antworten auf häufige Fragen zur deutschen KFZ-Steuer und zur Nutzung des Rechners.">
+  <Navbar client:load />
+  <main>
+    <section class="max-w-3xl mx-auto py-16 px-4">
+      <h1 class="text-3xl font-bold mb-8">Häufige Fragen zur KFZ-Steuer</h1>
+      <FaqAccordion
+        faqs={[
+          { id: 'faq-berechnung', question: 'Wie wird die KFZ-Steuer berechnet?', answer: 'Die Steuer setzt sich aus Hubraumsteuer und CO₂-Komponente zusammen. Für Elektrofahrzeuge gelten Sonderregelungen. Unser Rechner berücksichtigt die aktuellen gesetzlichen Vorgaben.' },
+          { id: 'faq-daten', question: 'Welche Daten benötige ich für die Berechnung?', answer: 'Sie benötigen: Fahrzeugtyp, Hubraum (ccm), CO₂-Ausstoß (g/km), Erstzulassungsjahr und zulässiges Gesamtgewicht.' },
+          { id: 'faq-befreiung', question: 'Wer ist von der KFZ-Steuer befreit?', answer: 'Reine Elektrofahrzeuge sind für einen bestimmten Zeitraum steuerbefreit. Details finden Sie beim Bundesfinanzministerium.' },
+          { id: 'faq-aktualitaet', question: 'Wie aktuell sind die Berechnungen?', answer: 'Die Berechnung basiert auf den Steuersätzen für das Jahr 2025. Für verbindliche Auskünfte wenden Sie sich bitte an Ihr Finanzamt.' },
+          { id: 'faq-datenschutz', question: 'Werden meine Daten gespeichert?', answer: 'Nein, es werden keine personenbezogenen Daten gespeichert. Die Nutzung ist anonym und DSGVO-konform.' },
+          { id: 'faq-abweichung', question: 'Warum kann mein Steuerbetrag von der Realität abweichen?', answer: 'Es gibt Sonderregelungen (z.B. für Oldtimer, Sonderfahrzeuge, Anhänger), die im Rechner nicht abgebildet sind.' },
+          { id: 'faq-export', question: 'Kann ich die Berechnungsergebnisse exportieren?', answer: 'Ja, Sie können das Ergebnis als PDF speichern oder ausdrucken.' },
+          { id: 'faq-support', question: 'Was mache ich bei technischen Problemen?', answer: 'Kontaktieren Sie uns über das Impressum oder laden Sie die Seite neu.' }
+        ]}
+        client:load
+      />
+    </section>
+  </main>
+  <Footer />
+</Layout>

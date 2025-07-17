@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KFZ-Steuer API</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; }
+        code { background: #f4f4f4; padding: 2px 4px; border-radius: 3px; }
+        pre { background: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
+        .endpoint { background: #e7f3ff; padding: 15px; margin: 20px 0; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>KFZ-Steuer Rechner API</h1>
+        
+        <p>Diese API berechnet die deutsche Kraftfahrzeugsteuer basierend auf Fahrzeugdaten.</p>
+        
+        <div class="endpoint">
+            <h2>POST /calculate-tax.php</h2>
+            <p><strong>Beschreibung:</strong> Berechnet die KFZ-Steuer für ein Fahrzeug</p>
+            
+            <h3>Request Body (JSON):</h3>
+            <pre><code>{
+  "type": "benzin|diesel|elektro|hybrid",
+  "displacement": 1600,
+  "co2_emission": 120,
+  "first_registration_year": 2020,
+  "weight": 1500
+}</code></pre>
+            
+            <h3>Response (JSON):</h3>
+            <pre><code>{
+  "annual": 164.00,
+  "monthly": 13.67,
+  "details": {
+    "displacement_tax": 32.00,
+    "co2_tax": 50.00,
+    "base_tax": 0.00
+  }
+}</code></pre>
+            
+            <h3>Parameter:</h3>
+            <ul>
+                <li><code>type</code>: Fahrzeugtyp (benzin, diesel, elektro, hybrid)</li>
+                <li><code>displacement</code>: Hubraum in ccm (1-10000)</li>
+                <li><code>co2_emission</code>: CO2-Ausstoß in g/km (0-500)</li>
+                <li><code>first_registration_year</code>: Erstzulassungsjahr (1990-heute)</li>
+                <li><code>weight</code>: Zulässiges Gesamtgewicht in kg (100-50000)</li>
+            </ul>
+        </div>
+        
+        <h3>Beispiel-Aufruf mit curl:</h3>
+        <pre><code>curl -X POST http://localhost:8080/calculate-tax.php \
+  -H "Content-Type: application/json" \
+  -d '{
+    "type": "benzin",
+    "displacement": 1600,
+    "co2_emission": 120,
+    "first_registration_year": 2020,
+    "weight": 1500
+  }'</code></pre>
+        
+        <h3>Status Codes:</h3>
+        <ul>
+            <li><code>200</code>: Erfolgreiche Berechnung</li>
+            <li><code>400</code>: Fehlerhafte Eingabedaten</li>
+            <li><code>405</code>: Methode nicht erlaubt (nur POST)</li>
+        </ul>
+        
+        <h3>CORS-Unterstützung:</h3>
+        <p>Die API unterstützt Cross-Origin Resource Sharing (CORS) für Frontend-Aufrufe.</p>
+    </div>
+</body>
+</html>

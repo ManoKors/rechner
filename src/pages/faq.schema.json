@@ -1,0 +1,70 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wie wird die KFZ-Steuer berechnet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Steuer setzt sich aus Hubraumsteuer und CO₂-Komponente zusammen. Für Elektrofahrzeuge gelten Sonderregelungen. Unser Rechner berücksichtigt die aktuellen gesetzlichen Vorgaben."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Daten benötige ich für die Berechnung?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sie benötigen: Fahrzeugtyp, Hubraum (ccm), CO₂-Ausstoß (g/km), Erstzulassungsjahr und zulässiges Gesamtgewicht."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wer ist von der KFZ-Steuer befreit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Reine Elektrofahrzeuge sind für einen bestimmten Zeitraum steuerbefreit. Details finden Sie beim Bundesfinanzministerium."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie aktuell sind die Berechnungen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Berechnung basiert auf den Steuersätzen für das Jahr 2025. Für verbindliche Auskünfte wenden Sie sich bitte an Ihr Finanzamt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Werden meine Daten gespeichert?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein, es werden keine personenbezogenen Daten gespeichert. Die Nutzung ist anonym und DSGVO-konform."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Warum kann mein Steuerbetrag von der Realität abweichen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es gibt Sonderregelungen (z.B. für Oldtimer, Sonderfahrzeuge, Anhänger), die im Rechner nicht abgebildet sind."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann ich die Berechnungsergebnisse exportieren?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, Sie können das Ergebnis als PDF speichern oder ausdrucken."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was mache ich bei technischen Problemen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kontaktieren Sie uns über das Impressum oder laden Sie die Seite neu."
+      }
+    }
+  ]
+}

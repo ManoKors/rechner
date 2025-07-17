@@ -1,0 +1,33 @@
+{
+  "name": "kfz-rechner",
+  "version": "1.0.0",
+  "description": "Moderne KFZ-Steuer-Rechner Webseite mit Astro, Svelte und PHP Backend",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
+    "php:start": "php -S localhost:8080 -t backend/"
+  },
+  "dependencies": {
+    "@astrojs/svelte": "^7.1.0",
+    "@astrojs/tailwind": "^5.1.5",
+    "astro": "^5.11.0",
+    "svelte": "^5.35.4",
+    "tailwindcss": "^3.4.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.3.0",
+    "@types/node": "^20.10.0",
+    "sass": "^1.69.0",
+    "svelte-check": "^3.6.0",
+    "typescript": "^5.8.3"
+  },
+  "astro": {
+    "output": "server"
+  }
+}

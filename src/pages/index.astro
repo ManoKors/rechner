@@ -1,0 +1,142 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Calculator from '../components/Calculator.svelte';
+import Hero from '../components/Hero.svelte';
+import Features from '../components/Features.svelte';
+import Footer from '../components/Footer.svelte';
+import FaqAccordion from '../components/FaqAccordion.svelte';
+---
+
+<Layout 
+  title="KFZ-Steuer Rechner - Berechnen Sie Ihre Kraftfahrzeugsteuer"
+  description="Kostenloser KFZ-Steuer Rechner für Deutschland. Berechnen Sie schnell und einfach Ihre Kraftfahrzeugsteuer basierend auf Hubraum, CO2-Ausstoß und Fahrzeugtyp."
+>
+  <head>
+    <script type="application/ld+json">{
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Wer ist für die KFZ-Steuer zuständig und wann muss ich zahlen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Für die Festsetzung und Erhebung der KFZ-Steuer ist die Bundeszollverwaltung zuständig, genauer gesagt das für Sie zuständige Hauptzollamt. Die Steuer wird jährlich im Voraus fällig. Der genaue Fälligkeitstag richtet sich nach dem Datum der Zulassung Ihres Fahrzeugs. Sie erhalten nach der Anmeldung einen Steuerbescheid, in dem die Höhe und das Fälligkeitsdatum aufgeführt sind. Bei einer Jahressteuer von über 500 Euro können Sie auch eine halbjährliche oder vierteljährliche Zahlung beantragen, hierfür wird jedoch ein Aufgeld berechnet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie wird die KFZ-Steuer für PKW berechnet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Die Berechnungsmethode für Personenkraftwagen (PKW) unterscheidet sich je nach Erstzulassungsdatum. Für PKW mit Erstzulassung ab dem 1. Januar 2021 setzt sich die Steuer aus einem hubraumbezogenen und einem CO2-bezogenen Anteil zusammen. Hubraumanteil: Benziner: 2,00 € je angefangene 100 cm³ Hubraum, Diesel: 9,50 € je angefangene 100 cm³ Hubraum. CO2-Anteil: Dieser wird fällig für Emissionen über 95 g/km und ist gestaffelt. Je höher der CO2-Ausstoß, desto höher der Steuersatz pro Gramm CO2. Für PKW mit Erstzulassung vom 5. November 2008 bis 31. Dezember 2020 gibt es einen anderen CO2-Freibetrag und Satz."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie werden Elektroautos und Hybride besteuert?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Reine Elektrofahrzeuge (BEV), die zwischen dem 18. Mai 2011 und dem 31. Dezember 2025 erstzugelassen wurden oder werden, sind bis zum 31. Dezember 2030 von der KFZ-Steuer befreit. Nach Ablauf der Befreiung wird die Steuer nach dem zulässigen Gesamtgewicht berechnet. Plug-in-Hybride und Vollhybride werden wie herkömmliche Benziner oder Diesel nach Hubraum und CO2-Ausstoß besteuert."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Gibt es Sonderregelungen für andere Fahrzeugtypen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, für bestimmte Fahrzeugarten gelten pauschale oder abweichende Steuersätze. Oldtimer (mit H-Kennzeichen): pauschal 191,73 € pro Jahr für PKW und 46,02 € pro Jahr für Motorräder. Wohnmobile: Besteuerung nach zulässigem Gesamtgewicht und Schadstoffklasse. Motorräder: 1,84 € je angefangene 25 cm³ Hubraum. LKW: Steuer nach zulässigem Gesamtgewicht und ggf. Schadstoff-/Geräuschklasse."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Was ist der Unterschied zwischen KFZ-Steuer und CO2-Preis?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Die KFZ-Steuer ist eine jährliche Abgabe für das Halten eines Fahrzeugs. Der CO2-Preis (oft als CO2-Steuer bezeichnet) ist eine Abgabe, die auf fossile Brennstoffe wie Benzin und Diesel erhoben wird und direkt beim Tanken bezahlt wird. Es handelt sich um zwei unterschiedliche Steuern."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Welchen Einfluss hat das WLTP-Messverfahren?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Seit dem 1. September 2018 ist das WLTP-Messverfahren für die Ermittlung der Verbrauchs- und Emissionswerte von neuen PKW-Typen verbindlich. Dieses Verfahren liefert in der Regel realistischere und damit oft höhere CO2-Werte als das alte NEFZ-Verfahren. Da der CO2-Wert eine direkte Berechnungsgrundlage für die KFZ-Steuer ist, führt ein höherer WLTP-Wert tendenziell zu einer höheren Steuer für Neufahrzeuge."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wo finde ich einen offiziellen KFZ-Steuer-Rechner?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Das Bundesministerium der Finanzen (BMF) bietet auf seiner Webseite einen offiziellen KFZ-Steuer-Rechner an. Dort können Sie nach Eingabe der relevanten Fahrzeugdaten die voraussichtliche Jahressteuer für Ihr Fahrzeug ermitteln."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Haftungsausschluss",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Diese FAQ dient der allgemeinen Information und kann eine individuelle steuerliche Beratung nicht ersetzen. Die hier dargestellten Informationen wurden sorgfältig recherchiert, für die Richtigkeit und Vollständigkeit kann jedoch keine Gewähr übernommen werden. Rechtsverbindliche Auskünfte erteilt ausschließlich Ihr zuständiges Hauptzollamt."
+          }
+        }
+      ]
+    }</script>
+  </head>
+  <Hero ctaHref="#kfz-rechner" ctaText="Jetzt Kfz-Steuer berechnen" client:load />
+  <section id="kfz-rechner" class="scroll-mt-24">
+    <Calculator client:load />
+    <div class="text-center mt-6">
+      <a href="/faq" class="inline-block text-primary-700 underline hover:text-primary-900 transition" aria-label="Zu den häufigen Fragen">Fragen zur Berechnung?</a>
+    </div>
+  </section>
+  <Features />
+  <div id="faq">
+    <FaqAccordion
+      faqs={[
+        {
+          id: 'faq-zustaendigkeit',
+          question: 'Wer ist für die KFZ-Steuer zuständig und wann muss ich zahlen?',
+          answer: 'Für die Festsetzung und Erhebung der KFZ-Steuer ist die Bundeszollverwaltung zuständig, genauer gesagt das für Sie zuständige Hauptzollamt. Die Steuer wird jährlich im Voraus fällig. Der genaue Fälligkeitstag richtet sich nach dem Datum der Zulassung Ihres Fahrzeugs. Sie erhalten nach der Anmeldung einen Steuerbescheid, in dem die Höhe und das Fälligkeitsdatum aufgeführt sind. Bei einer Jahressteuer von über 500 Euro können Sie auch eine halbjährliche oder vierteljährliche Zahlung beantragen, hierfür wird jedoch ein Aufgeld berechnet.'
+        },
+        {
+          id: 'faq-berechnung',
+          question: 'Wie wird die KFZ-Steuer für PKW berechnet?',
+          answer: 'Die Berechnungsmethode für Personenkraftwagen (PKW) unterscheidet sich je nach Erstzulassungsdatum. Für PKW mit Erstzulassung ab dem 1. Januar 2021 setzt sich die Steuer aus einem hubraumbezogenen und einem CO2-bezogenen Anteil zusammen. Hubraumanteil: Benziner: 2,00 € je angefangene 100 cm³, Diesel: 9,50 € je angefangene 100 cm³. CO2-Anteil: Dieser wird fällig für Emissionen über 95 g/km und ist gestaffelt. Je höher der CO2-Ausstoß, desto höher der Steuersatz pro Gramm CO2. Für PKW mit Erstzulassung vom 5. November 2008 bis 31. Dezember 2020 gelten andere Freibeträge.'
+        },
+        {
+          id: 'faq-elektro-hybrid',
+          question: 'Wie werden Elektroautos und Hybride besteuert?',
+          answer: 'Reine Elektrofahrzeuge (BEV), die zwischen dem 18. Mai 2011 und dem 31. Dezember 2025 erstzugelassen wurden oder werden, sind bis zum 31. Dezember 2030 von der KFZ-Steuer befreit. Nach Ablauf der Befreiung wird die Steuer nach dem zulässigen Gesamtgewicht berechnet. Plug-in-Hybride und Vollhybride werden wie herkömmliche Benziner oder Diesel nach Hubraum und CO2-Ausstoß besteuert.'
+        },
+        {
+          id: 'faq-sonderfahrzeuge',
+          question: 'Gibt es Sonderregelungen für andere Fahrzeugtypen?',
+          answer: 'Ja, für bestimmte Fahrzeugarten gelten pauschale oder abweichende Steuersätze. Oldtimer (mit H-Kennzeichen): pauschal 191,73 € pro Jahr für PKW und 46,02 € pro Jahr für Motorräder. Wohnmobile: Besteuerung nach zulässigem Gesamtgewicht und Schadstoffklasse. Motorräder: 1,84 € je angefangene 25 cm³ Hubraum. LKW: Steuer nach zulässigem Gesamtgewicht und ggf. Schadstoff-/Geräuschklasse.'
+        },
+        {
+          id: 'faq-co2-preis',
+          question: 'Was ist der Unterschied zwischen KFZ-Steuer und CO2-Preis?',
+          answer: 'Die KFZ-Steuer ist eine jährliche Abgabe für das Halten eines Fahrzeugs. Der CO2-Preis (oft als CO2-Steuer bezeichnet) ist eine Abgabe, die auf fossile Brennstoffe wie Benzin und Diesel erhoben wird und direkt beim Tanken bezahlt wird. Es handelt sich um zwei unterschiedliche Steuern.'
+        },
+        {
+          id: 'faq-wltp',
+          question: 'Welchen Einfluss hat das WLTP-Messverfahren?',
+          answer: 'Seit dem 1. September 2018 ist das WLTP-Messverfahren für die Ermittlung der Verbrauchs- und Emissionswerte von neuen PKW-Typen verbindlich. Dieses Verfahren liefert in der Regel realistischere und damit oft höhere CO2-Werte als das alte NEFZ-Verfahren. Da der CO2-Wert eine direkte Berechnungsgrundlage für die KFZ-Steuer ist, führt ein höherer WLTP-Wert tendenziell zu einer höheren Steuer für Neufahrzeuge.'
+        },
+        {
+          id: 'faq-offiziell',
+          question: 'Wo finde ich einen offiziellen KFZ-Steuer-Rechner?',
+          answer: 'Das Bundesministerium der Finanzen (BMF) bietet auf seiner Webseite einen offiziellen KFZ-Steuer-Rechner an. Dort können Sie nach Eingabe der relevanten Fahrzeugdaten die voraussichtliche Jahressteuer für Ihr Fahrzeug ermitteln.'
+        },
+        {
+          id: 'faq-haftung',
+          question: 'Haftungsausschluss',
+          answer: 'Diese FAQ dient der allgemeinen Information und kann eine individuelle steuerliche Beratung nicht ersetzen. Die hier dargestellten Informationen wurden sorgfältig recherchiert, für die Richtigkeit und Vollständigkeit kann jedoch keine Gewähr übernommen werden. Rechtsverbindliche Auskünfte erteilt ausschließlich Ihr zuständiges Hauptzollamt.'
+        }
+      ]}
+      client:load
+    />
+  </div>
+  <Footer />
+</Layout>
