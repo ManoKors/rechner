@@ -7,7 +7,7 @@ export default defineConfig({
     svelte(),
     tailwind(),
   ],
-  output: 'server',
+  output: 'static',
   site: 'https://kfz-rechner.de',
   compressHTML: true,
   build: {
