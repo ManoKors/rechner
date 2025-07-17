@@ -1,5 +1,5 @@
 {
-  "name": "kfz-rechner-worker",
+  "name": "rechner-test",
   "compatibility_date": "2025-07-17",
   "assets": {
     "directory": "./dist"
